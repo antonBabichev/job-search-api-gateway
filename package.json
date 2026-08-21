@@ -1,0 +1,36 @@
+{
+  "name": "job-search-api-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean && mkdir -p dist && cp -r src/graphql dist/graphql",
+    "build": "npx tsup src/index.ts --format esm",
+    "dev": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonBabichev/job-search-api-gateway.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/antonBabichev/job-search-api-gateway/issues"
+  },
+  "homepage": "https://github.com/antonBabichev/job-search-api-gateway#readme",
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "tsup": "^8.5.1",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@apollo/server": "^5.5.1",
+    "@graphql-tools/load-files": "^7.0.1",
+    "@graphql-tools/merge": "^9.2.3",
+    "@graphql-tools/schema": "^10.1.0",
+    "graphql": "^16.14.2"
+  }
+}

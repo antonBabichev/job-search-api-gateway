@@ -1,0 +1,14 @@
+type Account {
+    name: String!,
+    email: String!
+}
+
+type Portal {
+    name: String!,
+    url: String!,
+    accounts: [Account]
+}
+
+type Query {
+  _version: String
+}

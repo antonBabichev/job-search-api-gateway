@@ -1,0 +1,4 @@
+extend type Query {
+    getAllPortals: [Portal],
+    getPortal(id: String!): Portal
+}
