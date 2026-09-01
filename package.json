@@ -1,9 +1,10 @@
 {
-  "name": "job-search-api-gateway",
+  "name": "@jsearch/api-gateway",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "codegen": "graphql-codegen --config ./src/codegen.ts",
     "clean": "rimraf dist",
     "prebuild": "npm run clean && mkdir -p dist && cp -r src/graphql dist/graphql",
     "build": "npx tsup src/index.ts --format esm",
@@ -22,7 +23,11 @@
   },
   "homepage": "https://github.com/antonBabichev/job-search-api-gateway#readme",
   "devDependencies": {
+    "@graphql-codegen/cli": "^7.2.0",
+    "@graphql-codegen/typescript": "^6.1.0",
+    "@graphql-codegen/typescript-resolvers": "^6.1.0",
     "@types/node": "^26.2.0",
+    "@types/pg": "^8.23.1",
     "tsup": "^8.5.1",
     "typescript": "^7.0.2"
   },
@@ -31,6 +36,9 @@
     "@graphql-tools/load-files": "^7.0.1",
     "@graphql-tools/merge": "^9.2.3",
     "@graphql-tools/schema": "^10.1.0",
-    "graphql": "^16.14.2"
+    "dotenv": "^17.4.2",
+    "graphql": "^16.14.2",
+    "knex": "^3.3.0",
+    "pg": "^8.23.0"
   }
 }

@@ -1,3 +1,9 @@
+type Job {
+    title: String!,
+    url: String!,
+    description: String
+}
+
 type Account {
     name: String!,
     email: String!
@@ -7,6 +13,7 @@ type Portal {
     name: String!,
     url: String!,
     accounts: [Account]
+    jobs: [Job]
 }
 
 type Query {
